@@ -1,8 +1,7 @@
+import { OrdersApp } from "@/components/dashboard/ui/secctions/orders/OrdersApp";
 
 export default function OrdersPage() {
   return (
-    <div>
-      <h1>Orders</h1>
-    </div>
+    <OrdersApp/>
   );
 }
