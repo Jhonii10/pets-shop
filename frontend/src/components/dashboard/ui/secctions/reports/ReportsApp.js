@@ -8,6 +8,7 @@ import { HiMiniShoppingBag } from "react-icons/hi2";
 import { FaUserFriends } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaHeartCircleCheck } from "react-icons/fa6";
+import { OrderStatusCharts } from './OrderStatusCharts';
 
 export const ReportsApp = () => {
   return (
@@ -55,6 +56,30 @@ export const ReportsApp = () => {
                     color='error'
                     />
               </Grid>
+
+              <Grid lg={8}size={{ xs: 12, md:6, lg: 8 }} >
+            <OrderStatusCharts
+              title="Estados de pedidos"
+              chartLabels={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep','Oct','Nov','Dec']}
+              chartData={[
+                {
+                  name: 'No pagados',
+                  type: 'column',
+                  fill: 'solid',
+                  data: [3, 1, 2, 7, 3, 2, 7, 1, 4, 2, 0],
+                  color: '#FF5630',
+                },
+                {
+                  name: 'Pagados',
+                  type: 'column',
+                  fill: 'solid',
+                  data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
+                  color: '#22C55E',
+                },
+                
+              ]}
+            />
+          </Grid>
 
 
         </Grid>
