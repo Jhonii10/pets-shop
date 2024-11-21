@@ -1,8 +1,7 @@
+import { ReportsApp } from "@/components/dashboard/ui/secctions/reports/ReportsApp";
 
 export default function ReportsPage() {
   return (
-    <div >
-      <h1>Reports</h1>
-    </div>
+    <ReportsApp/>
   );
 }
