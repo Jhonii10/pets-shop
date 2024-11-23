@@ -1,5 +1,6 @@
 'use client'
 
+import { login, registerUser } from '@/lib/auth/actions'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -34,20 +35,24 @@ export const RegisterForm = () => {
 
         try {
 
-            // todo: enviar formulario al backend
-            await new Promise(resolve => setTimeout(resolve, 2000)); // simulador
-    
-            // todo: respuesta positiva del backend redirigir al inicio mostra notificacion registro exitoso
-            toast.success('Registro exitoso!');
+            const res = await registerUser(name,email,password) 
 
-            router.replace('/dashboard')  
+            console.log(res)
 
-            // todo: respuestas negativas del backend manejarlas
+            if (!res?.ok) {
+                toast.error(res?.message)
+                return;
+             }
+
+
+             await login(email,password);
+
+             toast.success('inicio de session exitoso')
+
+             router.replace('/dashboard') 
 
             setPasswordError('');
             reset();
-
-            console.log({...data})
                 
         } catch (error) {
             console.error(error)
