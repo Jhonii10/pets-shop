@@ -11,6 +11,8 @@ import { useForm } from 'react-hook-form';
 import clsx from 'clsx';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import { petsShopApi } from '@/api/api';
+import { authenticate, login } from '@/lib/auth/actions';
 
 
 export const LoginForm = () => {
@@ -22,6 +24,7 @@ export const LoginForm = () => {
     const recaptchaRef = useRef(null);
 
     const {register,handleSubmit, formState:{errors,isSubmitting}, reset} = useForm()
+    
 
     const router = useRouter();
 
@@ -38,31 +41,28 @@ export const LoginForm = () => {
 
         try {
 
-          await new Promise(resolve => setTimeout(resolve, 2000)); // simulador
+  
+          const result = await authenticate(undefined , {email, password});
 
-          // todo: pedir accedo al backend
-          if (email !== 'prueba@gmail.com' || password !== '123456') {
+
+          if (result === 'Success') {
+              
+              router.replace('/dashboard')
+              toast.success('Inicio de sesion exitoso!');
+              reset()
+              setCaptchaValue(null)
+              setCaptchaError('')
+              setLoginError('')
+      
+              if (recaptchaRef.current) {
+                recaptchaRef.current.reset();
+              }
+
+          }else{
             setLoginError('Correo y/o contraseña inválidos.');
             return;
-          } 
-  
-          // todo: notificar al usuario el acceso toast
-          toast.success('Inicio de sesion exitoso!');
-          
-          // todo: dependiendo de la respuesta cambiar de ruta
-          router.replace('/dashboard') 
-          
-          // todo: resetear formulario
-          reset()
-          setCaptchaValue(null)
-          setCaptchaError('')
-          setLoginError('')
-  
-          if (recaptchaRef.current) {
-            recaptchaRef.current.reset();
           }
-  
-          console.log({ email, password, captchaValue });  
+
           
         } catch (error) {
           console.error(error)

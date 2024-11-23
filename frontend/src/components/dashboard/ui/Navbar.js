@@ -4,7 +4,7 @@ import { CgMenuLeft } from "react-icons/cg";
 import Account from './header/Account';
 import { IoSearchOutline } from "react-icons/io5";
 
-const Navbar = ({draweWidth, onOpenNav }) => {
+const Navbar = ({draweWidth, onOpenNav ,session }) => {
   return (
     <AppBar
             
@@ -38,7 +38,7 @@ const Navbar = ({draweWidth, onOpenNav }) => {
                   sx={{display:'flex', alignItems:'center', gap:'8px'}}
                 >
                 
-                <Account/>
+                <Account session={session}/>
                 
                 </Grid>
                 

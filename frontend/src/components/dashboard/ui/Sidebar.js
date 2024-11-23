@@ -19,10 +19,11 @@ const StyledAccount = styled('div')(({ theme }) => ({
 }));
 
 
-const Sidebar = ({draweWidth, openNav, onCloseNav, onToggleDrawerWidth}) => {
+const Sidebar = ({draweWidth, openNav, onCloseNav, session}) => {
 
     const isDesktop = useResponsive('up','lg');
     const pathname = usePathname();
+    const user = session?.user;
 
     useEffect(() => {
         if(openNav){
@@ -84,7 +85,7 @@ const Sidebar = ({draweWidth, openNav, onCloseNav, onToggleDrawerWidth}) => {
                                 fontSize:'0.76rem',
                             }),
                             }}>
-                        Jhoni
+                        {user?.name}
                     </Typography>
                     </Box>
                 </StyledAccount>

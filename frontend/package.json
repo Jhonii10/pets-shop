@@ -14,12 +14,15 @@
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.1.4",
     "@mui/material-nextjs": "^6.1.4",
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
     "change-case": "^5.4.4",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "frontend": "file:",
     "lodash": "^4.17.21",
     "next": "14.2.13",
+    "next-auth": "^5.0.0-beta.25",
     "numeral": "^2.0.6",
     "prop-types": "^15.8.1",
     "react": "^18",
@@ -32,7 +35,9 @@
     "react-slick": "^0.30.2",
     "simplebar-react": "^3.2.6",
     "slick-carousel": "^1.8.1",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "z": "^1.0.9",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "eslint": "^8",

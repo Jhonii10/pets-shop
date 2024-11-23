@@ -22,7 +22,7 @@ const Main = styled('div')(({ theme }) => ({
     },
   }));
 
-const LayoutWrapper = ({children}) => {
+const LayoutWrapper = ({children , session}) => {
 
     const [drawerWidth, setDrawerWidth] = useState(300); 
   
@@ -35,8 +35,8 @@ const LayoutWrapper = ({children}) => {
 
   return (
     <Box display={'flex'}>
-        <Navbar  draweWidth={drawerWidth} onOpenNav={() => setOpen(true)} />
-        <Sidebar draweWidth={drawerWidth} openNav={open} onCloseNav={() => setOpen(false)}  onToggleDrawerWidth={toggleDrawerWidth}/>
+        <Navbar  draweWidth={drawerWidth} onOpenNav={() => setOpen(true)} session ={session}/>
+        <Sidebar draweWidth={drawerWidth} openNav={open} onCloseNav={() => setOpen(false)}  onToggleDrawerWidth={toggleDrawerWidth} session ={session}/>
         <Main>
             {
                 children
