@@ -1,5 +1,6 @@
 'use client';
 
+import { logOut } from '@/lib/auth/actions';
 import { Avatar, Box, Divider, IconButton, MenuItem, Popover, Stack, Typography, alpha } from '@mui/material';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -14,16 +15,19 @@ const menuItems = [
 ];
 
 
-const Account = () => {
+const Account = ({session}) => {
 
     const [open, setOpen] = useState(null);
     const pathname = usePathname();
+    const user = session?.user;
+
+    console.log('session', session)
 
     const router = useRouter();
 
 
     const onLogout = ()=>{
-        // todo: cerrar la session del usuario
+        logOut()
         router.replace('/')
         setOpen(null);
         toast.success('Session cerrada')
@@ -107,10 +111,10 @@ const Account = () => {
             <Box sx={{ my: 1.5, px: 2.5 , }} >
 
           <Typography variant="subtitle2" noWrap>
-            Jhoni
+            {user?.name}
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
-            jhoni@gmail.com
+            {user?.name}@gmail.com
           </Typography>
         </Box>
         <Divider sx={{ borderStyle: 'dashed' }} />

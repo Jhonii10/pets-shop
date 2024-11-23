@@ -1,3 +1,4 @@
+import { auth } from '@/auth.config';
 import theme from '@/components/dashboard/themes';import LayoutWrapper from '@/components/dashboard/ui/LayoutWrapper';
 import { CssBaseline } from '@mui/material';
 ;
@@ -8,13 +9,16 @@ export const metadata = {
     description: "",
   };
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
  children
 }) {
+
+  const session = await auth();
+
   return (
  <ThemeProvider theme={theme}>
     <CssBaseline />
-    <LayoutWrapper children={children}/>
+    <LayoutWrapper children={children} session = {session}/>
  </ThemeProvider>
   );
 }
