@@ -1,5 +1,6 @@
 'use server';
 
+import { petsShopApi } from "@/api/api";
 import { signIn, signOut } from "@/auth.config";
 
 export async function authenticate(prevState, formData) {
@@ -41,3 +42,24 @@ export async function login(email, password) {
 export const logOut = async () => {
     await signOut();
 };
+
+export const registerUser = async (name , email , password) => {
+    try {
+        const {data} = await petsShopApi.post('/auth/new', {name , email , password});
+
+        if(data){
+            return {
+                ok: true,
+                message:'Usuario creado',
+                data:data
+            }
+        }
+
+    } catch (error) {
+        console.log(error)
+        return {
+            ok: false,
+            message: 'no se pudo crear el usuario'
+        } 
+    }
+}
