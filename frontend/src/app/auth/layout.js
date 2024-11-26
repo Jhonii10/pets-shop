@@ -1,8 +1,17 @@
+import { auth } from "@/auth.config";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export default async function AuthLayout({
  children
 }) {
+
+  const session = await auth();
+
+  if (session?.user) {
+      redirect('/')
+  }
+
   return (
     <main className="bg-sky-400 min-h-screen flex justify-center items-center ">
       <div className="w-full md:w-2/4 min-h-screen">
