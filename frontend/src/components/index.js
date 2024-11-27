@@ -9,3 +9,4 @@ export * from './auth/restore/RestoreForm'
 export * from './dashboard/themes';
 export * from './dashboard/ui/LayoutWrapper';
 export * from './dashboard/ui/secctions/dashboard/DashboardApp'
+export * from './dashboard/ui/secctions/users/new/CreateNewUserForm'
