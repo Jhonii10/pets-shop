@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Stack, Typography } from '@mui/material';
 
-const AppWelcome = () => {
+const AppWelcome = ({name = ''}) => {
 
     return (
         <>
@@ -35,7 +35,7 @@ const AppWelcome = () => {
                 whiteSpace:'pre-line'
                 
             }}>
-              Bienvenido de nuevo 👋 Jhoni
+              Bienvenido de nuevo 👋 {name}
             </Typography>
             <Typography variant="body2" sx={{
                 marginBottom:{xs:'24px'},

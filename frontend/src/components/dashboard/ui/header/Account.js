@@ -19,9 +19,8 @@ const Account = ({session}) => {
 
     const [open, setOpen] = useState(null);
     const pathname = usePathname();
-    const user = session?.user;
 
-    console.log('session', session)
+    const user = session?.user;
 
     const router = useRouter();
 

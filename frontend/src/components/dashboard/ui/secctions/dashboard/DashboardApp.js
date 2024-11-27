@@ -9,9 +9,11 @@ import AppPreferenceRace from './AppPreferenceRace';
 import AppAnnualSalesTrends from './AppAnnualSalesTrends';
 
 
-export const DashboardApp = () => {
+export const DashboardApp = ({session}) => {
 
   const theme = useTheme();
+
+  const {name} = session?.user;
 
     return (  
         <>
@@ -19,7 +21,7 @@ export const DashboardApp = () => {
             <Grid container spacing={2}>
 
               <Grid size={{ xs: 12, md: 8 }}>
-                <AppWelcome/>
+                <AppWelcome name={name} />
               </Grid>
 
               <Grid size={{ xs: 12, md: 4 }}>
