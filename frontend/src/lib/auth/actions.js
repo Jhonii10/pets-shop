@@ -56,10 +56,9 @@ export const registerUser = async (name , email , password) => {
         }
 
     } catch (error) {
-        console.log(error)
         return {
             ok: false,
-            message: 'no se pudo crear el usuario'
+            message: error.response?.data?.msg ?? 'No se pudo crear el usuario.'
         } 
     }
 }

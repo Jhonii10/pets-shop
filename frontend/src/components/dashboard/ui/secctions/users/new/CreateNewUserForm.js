@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react'
 import {
     Box,
@@ -12,8 +14,45 @@ import {
 import Grid from '@mui/material/Grid2';
 import Link from 'next/link';
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { useForm } from 'react-hook-form';
+import { registerUser } from '@/lib/auth/actions';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
-export const CreateNewUserForm = () => {
+export const CreateNewUserForm =  () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors, isSubmitting},
+        watch,
+        reset
+      } = useForm();
+
+    const router = useRouter();
+
+    const password = watch("password", "");
+
+    const onSubmit = async (data) => {
+
+        try {
+
+            const result = await registerUser(data.name, data.email, data.password);
+
+            if (result.ok) {
+                toast.success('Usuario creado exitosamente.');
+                reset();
+                router.refresh('/dashboard/users')
+
+            }else{
+                toast.error(result?.message);
+            }
+            
+        } catch (error) {
+            console.error(error);
+        }
+        
+    };
+
   return (
     <Container>
         <Stack direction="column" mb={3} mt={2}>
@@ -32,7 +71,7 @@ export const CreateNewUserForm = () => {
     <Grid container spacing={2}>
       <Grid item size={{xs:12 , md:8}}>
         <Card sx={{ padding: 4 , borderRadius:'16px' }}>
-          <Box component={'form'} noValidate autoComplete="off" >
+          <Box component={'form'} autoComplete="off" onSubmit={handleSubmit(onSubmit)} >
             <Box  
                     sx={{
                             display: "grid",
@@ -56,16 +95,25 @@ export const CreateNewUserForm = () => {
                 <TextField 
                 fullWidth
                 label="Nombre completo"
-                name="name"
+                {...register('name',{required:'El nombre es obligatorio'})}
+                error={!!errors.name}
                 variant="outlined"
+                helperText={errors.name?.message}
                 />
 
                 <TextField
                 fullWidth
                 label="Correo electronico"
-                name="email"
+                {...register("email", {
+                    required: "El correo es obligatorio",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: "Correo inválido",
+                    },
+                  })}
+                  error={!!errors.email}
+                  helperText={errors.email?.message}
                 variant="outlined"
-                type='email'
                 />
                 
                 <TextField
@@ -73,7 +121,7 @@ export const CreateNewUserForm = () => {
                 select
                 defaultValue={'cedula de cuidadania'}
                 label="Tipo de documento"
-                name="typedocument"
+                {...register("typedocument")}
                 variant="outlined"
                 >
                     <MenuItem value="cedula de cuidadania">Cédula de ciudadanía</MenuItem>
@@ -83,20 +131,32 @@ export const CreateNewUserForm = () => {
                 <TextField
                 fullWidth
                 label="Numero de documento"
-                name="numberId"
+                {...register("numberId", {
+                    required: "El numero de documento es obligatorio",
+                })}
+                error={!!errors.numberId}
+                helperText={errors.numberId?.message}
                 variant="outlined"
                 />
                 <TextField
                 fullWidth
                 label="Telefono"
-                name="phone"
+                {...register("phone", {
+                    required: "El telefono es obligatorio",
+                    pattern: {
+                      value: /^[0-9]+$/,
+                      message: "Solo se permiten números",
+                    },
+                })}
+                error={!!errors.phone}
+                helperText={errors.phone?.message}
                 variant="outlined"
                 />
                 
                 <TextField
                 fullWidth
                 label="Role"
-                name="role"
+                {...register("role")}
                 variant="outlined"
                 select
                 defaultValue={'cliente'}
@@ -109,26 +169,52 @@ export const CreateNewUserForm = () => {
                 <TextField
                 fullWidth
                 label="contraseña"
-                name="password"
+
+                  {...register("password", {
+                    required: "La contraseña es obligatoria",
+                    minLength: {
+                      value: 6,
+                      message: "La contraseña debe tener al menos 6 caracteres",
+                    },
+                    maxLength: {
+                      value: 32,
+                      message: "La contraseña no puede tener más de 32 caracteres",
+                    },
+                  })}
+                  error={!!errors.password}
+                  helperText={errors.password?.message}
                 variant="outlined"
+                type='password'
                 />
                 <TextField
                 fullWidth
                 label="confirmar contraseña"
-                name="passwordConfirm"
+                {...register("passwordConfirm", {
+                    required: "Este campo es obligatorio",
+                    validate: (value) =>
+                      value === password || "Las contraseñas no coinciden",
+                  })}
+                error={!!errors.passwordConfirm}
+                helperText={errors.passwordConfirm?.message}
+                type='password'
                 variant="outlined"
                 />
                 
             </Box>
             <Stack direction="row" justifyContent="flex-end" mt={'24px'}>
-                <Button type="submit" sx={{
-                    backgroundColor: '#000',
-                    color: 'white',
-                    '&:hover': {
-                        backgroundColor: '#454F5B',
-                    }
-                }}>
-                    Crear usuario
+                <Button 
+                    type="submit" 
+                    sx={{
+                        backgroundColor: '#000',
+                        color: 'white',
+                        '&:hover': {
+                            backgroundColor: '#454F5B',
+                        }
+
+                    }}
+                    disabled={isSubmitting}
+                >
+                   { !isSubmitting ? 'Crear usuario' : 'Creando usuario...'}
                 </Button>
                 </Stack>
             </Box>
