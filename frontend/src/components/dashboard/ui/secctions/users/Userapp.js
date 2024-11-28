@@ -24,7 +24,7 @@ const TABLE_HEAD = [
     { id: '' },
   ];
 
-  const USERLIST = [
+  export const USERLIST = [
     { id: 1, name: 'Juan Pérez', email: 'juan.perez@gmail.com', role: 'administrador', status: 'activo' },
     { id: 2, name: 'María Gómez', email: 'maria.gomez@gmail.com', role: 'asesor de ventas', status: 'activo' },
     { id: 3, name: 'Pedro Martínez', email: 'pedro.martinez@gmail.com', role: 'cliente', status: 'inactivo' },
