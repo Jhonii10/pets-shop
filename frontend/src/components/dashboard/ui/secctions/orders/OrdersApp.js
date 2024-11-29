@@ -24,7 +24,7 @@ const TABLE_HEAD = [
     { id: '' },
   ];
 
-  const ORDERS_LIST = [
+  export const ORDERS_LIST = [
     { id: 1, order: '0001', customer: { name: 'Jayvion Simon', email: 'ashlynn.ohara62@gmail.com', imageUrl: '' }, date: '20 de noviembre de 2024', items: '2', price: '1,500,000', status: 'pagado' },
     { id: 2, order: '0002', customer: { name: 'Amara Nguyen', email: 'amara.nguyen88@gmail.com', imageUrl: '' }, date: '18 de noviembre de 2024', items: '1', price: '500,000', status: 'no pagado' },
     { id: 3, order: '0003', customer: { name: 'Kylan Walker', email: 'kylan.walker23@gmail.com', imageUrl: '' }, date: '15 de noviembre de 2024', items: '3', price: '2,300,000', status: 'no pagado' },
