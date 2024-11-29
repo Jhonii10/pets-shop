@@ -22,7 +22,7 @@ const TABLE_HEAD = [
     { id: '' },
   ];
 
-const PETS_LIST = [
+export const PETS_LIST = [
   { id: 1, pet: 'Pastor alemán', createAt: '2022-11-15', price: '500,000', stock: 10, imageUrl:'https://images.pexels.com/photos/29443619/pexels-photo-29443619/free-photo-of-retrato-de-un-perro-pastor-aleman.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
   { id: 2, pet: 'Bulldog Francés', createAt: '2023-01-10', price: '600,000', stock: 4, imageUrl:'https://images.pexels.com/photos/160846/french-bulldog-summer-smile-joy-160846.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'  },
   { id: 3, pet: 'Golden Retriever', createAt: '2023-02-20', price: '550,000', stock: 3, imageUrl:'https://images.pexels.com/photos/2409503/pexels-photo-2409503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'  },
@@ -162,7 +162,7 @@ export const PetsApp = () => {
                                 </TableCell>
 
                                 <TableCell align="right" >
-                                <Link href={`/dashboard/pets/edit/${id}`}>
+                                <Link href={`/dashboard/pets/${id}`}>
                                 <Tooltip title="Editar">
                                     <IconButton size="small" sx={{padding:'12px'}} color="inherit" >
                                     <GrEdit ize={20} />
