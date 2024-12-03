@@ -1,5 +1,5 @@
 'use client'
-import { alpha, Avatar, Box, Drawer, IconButton, Link, Toolbar, Typography } from '@mui/material'
+import { alpha, Avatar, Box, Drawer, IconButton, Link as A, Toolbar, Typography } from '@mui/material'
 import React, { useEffect } from 'react'
 import useResponsive from '../hooks/useResponsive'
 import Image from 'next/image'
@@ -9,6 +9,7 @@ import ScrollBar from './scrollbar/ScrollBar'
 import NavSetion from './sidebar-setions/NavSetion'
 import navConfig from './sidebar-setions/config'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link';
 
 const StyledAccount = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -42,7 +43,9 @@ const Sidebar = ({draweWidth, openNav, onCloseNav, session}) => {
                 height:70,
                 minHeight:'70px !important'
             }}>
+                
                 <Typography  noWrap component={'div'} >
+                    <Link href={'/'} >
                     <Image
                         src="/logo.png"
                         width={120}
@@ -50,6 +53,7 @@ const Sidebar = ({draweWidth, openNav, onCloseNav, session}) => {
                         alt="Logo"
                         title='logo'
                     />
+                    </Link>
                 </Typography>
 
                 <IconButton
@@ -67,7 +71,7 @@ const Sidebar = ({draweWidth, openNav, onCloseNav, session}) => {
                     mx:  draweWidth === 88 ? 1: 2.5, 
                     mt: draweWidth === 88 ? 1: 2, 
                 }}>
-                <Link underline="none">
+                <A underline="none">
                 <StyledAccount sx={{
                     flexDirection: draweWidth === 88 ? 'column':'row',
 
@@ -89,7 +93,7 @@ const Sidebar = ({draweWidth, openNav, onCloseNav, session}) => {
                     </Typography>
                     </Box>
                 </StyledAccount>
-                </Link>
+                </A>
             </Box>
 
             <ScrollBar>
