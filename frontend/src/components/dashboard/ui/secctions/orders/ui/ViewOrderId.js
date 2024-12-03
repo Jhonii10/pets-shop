@@ -20,8 +20,6 @@ export const ViewOrderId = ({id}) => {
     if (!order) {
         redirect('/dashboard/orders');
     }
-
-    console.log();
     
     
   return (

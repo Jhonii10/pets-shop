@@ -11,7 +11,6 @@ import toast from 'react-hot-toast';
 const menuItems = [
     { name: 'Inicio',  route: '/dashboard' },
     { name: 'Perfil',  route: '/dashboard/profile' },
-    { name: 'Ajustes', route: '/dashboard/settings' },
 ];
 
 
