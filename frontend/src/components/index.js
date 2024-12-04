@@ -1,4 +1,5 @@
-// ui 
+// ui
+export * from './ui/navbar/Navbar'
 
 // auth 
 export * from './auth/login/LoginForm';
