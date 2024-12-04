@@ -9,7 +9,9 @@ export default async function  ShopLayout({children}) {
     <main className="min-h-screen ">
       <Navbar/>
       <Sidebar session={session}/>
+      <div className="bg-[url('/images/fondo.png')]">
       {children}
+      </div>
     </main>
   );
 }
