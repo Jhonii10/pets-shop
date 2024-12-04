@@ -1,5 +1,6 @@
 'use client';
 
+import { useUiStore } from '@/store';
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -7,6 +8,7 @@ import { IoCartOutline, IoSearchOutline } from 'react-icons/io5'
 
 export const Navbar = () => {
 
+    const openSideMenu = useUiStore((state)=>state.openSideMenu)
 
     return (
         <nav className='flex px-4 py-4 justify-between items-center w-full bg-[#4DD7F5]'>
@@ -59,6 +61,7 @@ export const Navbar = () => {
     
                 <button 
                     className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'
+                    onClick={openSideMenu}
                 >
                   Menu  
                 </button>

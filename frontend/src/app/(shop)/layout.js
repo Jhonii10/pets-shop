@@ -1,5 +1,5 @@
 import { auth } from "@/auth.config";
-import { Navbar } from "@/components";
+import { Navbar, Sidebar } from "@/components";
 
 export default async function  ShopLayout({children}) {
 
@@ -8,6 +8,7 @@ export default async function  ShopLayout({children}) {
   return (
     <main className="min-h-screen ">
       <Navbar/>
+      <Sidebar session={session}/>
       {children}
     </main>
   );
