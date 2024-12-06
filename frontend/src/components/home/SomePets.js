@@ -67,9 +67,9 @@
 
     export const SomePets = () => {
     return (
-        <div className='w-full  m-auto  bg-[url(/images/fondo-pet.png)] bg-top '>
+        <div className='w-full  m-auto  bg-[url(/images/fondo-pet.png)] bg-top p-2 md:p-10'>
             <div className='p-8 text-center'>
-                <h2 className='text-3xl font-bold '>Alguno de nuestros cachorros</h2>
+                <h2 className='text-4xl font-bold '>Algunos de nuestros cachorros</h2>
             </div>
             <div className='max-w-6xl p-4 m-auto'>
             <Swiper

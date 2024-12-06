@@ -1,4 +1,4 @@
-import { SomePets } from "@/components";
+import { SomePets, WeDeliver } from "@/components";
 import Image from "next/image";
 
 export default function Home() {
@@ -51,9 +51,12 @@ export default function Home() {
           </div>
         </div>
 
+        {/* TODO: te entregamos */}
+        <WeDeliver/>
+
         {/* TODO: algunos de los cachorros */}
         <SomePets/>
-        {/* TODO: te entregamos */}
+        
         {/* TODO: testimonios o reseñas */}
 
 
