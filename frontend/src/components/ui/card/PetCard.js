@@ -6,8 +6,6 @@ import React, { useState } from 'react'
 
 export const PetCard = ({pet}) => {
 
-    console.log(pet)
-
     const [displayImage, setDisplayImage] = useState(pet?.imageUrl);
 
     const localSrc = (displayImage)

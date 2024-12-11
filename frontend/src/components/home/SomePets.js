@@ -8,6 +8,7 @@
     import 'swiper/css';
     import 'swiper/css/pagination';
     import { PetCard } from '../ui/card/PetCard';
+import Link from 'next/link';
 
 
     const dogs = [
@@ -67,9 +68,9 @@
 
     export const SomePets = () => {
     return (
-        <div className='w-full  m-auto  bg-[url(/images/fondo-pet.png)] bg-top '>
+        <div className='w-full  m-auto  bg-[url(/images/fondo-pet.png)] bg-top p-2 md:p-10'>
             <div className='p-8 text-center'>
-                <h2 className='text-3xl font-bold '>Alguno de nuestros cachorros</h2>
+                <h2 className='text-2xl md:text-3xl font-bold '>Algunos de nuestros cachorros</h2>
             </div>
             <div className='max-w-6xl p-4 m-auto'>
             <Swiper
@@ -112,7 +113,23 @@
         }
             
         </Swiper>
+        <div className='mt-12 sm:mt-24'>
+              <div className={`
+                    flex flex-row items-center justify-center
+                    before:content-[''] before:block before:relative before:w-[40vw] before:h-[1px] before:bg-[#4DD7F5]
+                    after:content-[''] after:block after:relative after:w-[40vw] after:h-[1px] after:bg-[#4DD7F5]
+                `}>
+                  <Link 
+                    href='/pets'
+                    className="inline-flex flex-row items-center justify-center text-center bg-[#4DD7F5] border-[#4DD7F5] hover:bg-[#3fdcff] cursor-pointer font-bold rounded-full p-6 mx-7 min-w-40 "
+                  >
+                      Ver mas
+                  </Link>
+              </div>
+          </div>
         </div>
+        
+
         </div>
     )
     }
