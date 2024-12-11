@@ -17,3 +17,4 @@ export * from './dashboard/ui/secctions/orders/ui/ViewOrderId'
 //home 
 export * from './home/SomePets'
 export * from './home/WeDeliver'
+export * from './home/Testimonials'
