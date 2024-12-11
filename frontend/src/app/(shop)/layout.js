@@ -1,5 +1,6 @@
 import { auth } from "@/auth.config";
-import { Navbar, Sidebar } from "@/components";
+import {  Footer, Navbar, Sidebar } from "@/components";
+
 
 export default async function  ShopLayout({children}) {
 
@@ -12,6 +13,7 @@ export default async function  ShopLayout({children}) {
       <div className="bg-[url('/images/fondo.png')]">
       {children}
       </div>
+      <Footer/>
     </main>
   );
 }
