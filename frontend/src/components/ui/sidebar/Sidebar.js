@@ -18,10 +18,12 @@ export const Sidebar =  ({session}) => {
   useEffect(() => {
     if (isSideMenuOpen) {
       document.body.classList.add('overflow-hidden');
-    } else {
+    }
+    else {
       document.body.classList.remove('overflow-hidden');
     }
-  }, [isSideMenuOpen]);
+    
+  }, [isSideMenuOpen , closeSideMenu]);
 
 
 
@@ -112,6 +114,7 @@ export const Sidebar =  ({session}) => {
                         <Link 
                         href={'/auth/login'}
                         className='flex items-center mt-5 p-2 hover:bg-gray-100 rounded-md transition-all'
+                        onClick={closeSideMenu}
                         >
                         <IoLogInOutline size={20}/>
                         <span className='ml-3 text-md font-medium'>Iniciar session</span>
