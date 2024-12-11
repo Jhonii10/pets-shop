@@ -24,8 +24,8 @@ const Account = ({session}) => {
     const router = useRouter();
 
 
-    const onLogout = ()=>{
-        logOut()
+    const onLogout = async ()=>{
+        await logOut()
         router.replace('/')
         setOpen(null);
         toast.success('Session cerrada')
