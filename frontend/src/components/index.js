@@ -21,3 +21,7 @@ export * from './dashboard/ui/secctions/orders/ui/ViewOrderId'
 export * from './home/SomePets'
 export * from './home/WeDeliver'
 export * from './home/Testimonials'
+
+//pet
+
+export * from './pets/slides-show/PetSlidesShow';
