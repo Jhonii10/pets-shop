@@ -2,6 +2,8 @@
 export * from './ui/navbar/Navbar'
 export * from './ui/sidebar/Sidebar'
 export * from './ui/footer/Footer'
+export * from './ui/title/Title'
+export * from './ui/pagination/Pagination'
 
 // auth 
 export * from './auth/login/LoginForm';
