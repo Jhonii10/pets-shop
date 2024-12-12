@@ -29,22 +29,22 @@ export const Navbar = () => {
             {/* center menu */}
             <div className='hidden sm:block'>
                 <Link 
-                    href={'#'} 
+                    href={'/size/mini'} 
                     className='m-2 p-2 rounded-md transition-all hover:bg-gray-100 font-medium'>
                     Mini
                 </Link>
                 <Link 
-                    href={'#'} 
+                    href={'/size/small'} 
                     className='m-2 p-2 rounded-md transition-all hover:bg-gray-100 font-medium'>
                     Pequeño
                 </Link>
                 <Link 
-                    href={'#'}  
+                    href={'/size/medium'}   
                     className='m-2 p-2 rounded-md transition-all hover:bg-gray-100 font-medium'>
                     Mediano
                 </Link>
                 <Link 
-                    href={'#'} 
+                    href={'/size/big'} 
                     className='m-2 p-2 rounded-md transition-all hover:bg-gray-100 font-medium'>
                     Grande
                 </Link>
