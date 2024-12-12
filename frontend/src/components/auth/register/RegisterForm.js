@@ -37,19 +37,17 @@ export const RegisterForm = () => {
 
             const res = await registerUser(name,email,password) 
 
-            console.log(res)
-
             if (!res?.ok) {
                 toast.error(res?.message)
                 return;
-             }
+            }
 
 
              await login(email,password);
 
              toast.success('inicio de session exitoso')
 
-             router.replace('/dashboard') 
+             router.replace('/') 
 
             setPasswordError('');
             reset();

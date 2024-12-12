@@ -23,5 +23,5 @@ export * from './home/WeDeliver'
 export * from './home/Testimonials'
 
 //pet
-
 export * from './pets/slides-show/PetSlidesShow';
+export * from './pets/quantity-selector/QuantitySelector';

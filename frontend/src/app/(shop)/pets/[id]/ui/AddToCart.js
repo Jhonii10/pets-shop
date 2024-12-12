@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react'
 import clsx from 'clsx'
+import { QuantitySelector } from '@/components';
+import toast from 'react-hot-toast';
 
 export const AddToCart = ({product}) => {
 
@@ -11,25 +13,21 @@ export const AddToCart = ({product}) => {
 
     const addToCart = ()=>{
 
-        if (!size) {
-            setPosted(true)
-            return
-        };
-
-        const { id, slug, title, price,images,inStock} = product;
+        const { id, slug, title, price,imageUrl,inStock} = product;
 
         const CartProduct = {
             id,
             title,
             slug,
             price,
-            image:images[0],
+            image:imageUrl[0],
             quantity,
             size,
             stock:inStock,
         };
 
-        addProductToCart(CartProduct);
+        toast.success('Mascota añadida al carrito')
+
         setSize(undefined);
         setQuantity(1);
         setPosted(false);
@@ -39,13 +37,20 @@ export const AddToCart = ({product}) => {
 
   return (
     <>
+
+        <QuantitySelector 
+            quantity={quantity}
+            setQuantityChange = {setQuantity}
+            inStock={product.stock}
+        />
+        
         <button 
             className={clsx('max-w-48',{
-                "btn-primary my-5 ": product.stock > 0,
-                "btn-disabled my-5": product.Stock === 0
+                "btn-primary ": product.stock > 0,
+                "btn-disabled ": product.Stock === 0
             })}
             onClick={addToCart}
-            disabled={product.inStock === 0}
+            disabled={product.Stock === 0}
         >
          Agregar al carrito
         </button>
