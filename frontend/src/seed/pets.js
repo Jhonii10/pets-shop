@@ -180,8 +180,6 @@ export const PETS_ALL = [
       "breed": "Yorkshire Terrier",
       "price": 320000,
       "imageUrl": [
-        "https://images.pexels.com/photos/674574/pexels-photo-674574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/674574/pexels-photo-674574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       ],
       "stock": 8,
       "descripcion": "El Yorkshire Terrier es pequeño, elegante y muy activo."
@@ -192,8 +190,6 @@ export const PETS_ALL = [
       "breed": "Boston Terrier",
       "price": 400000,
       "imageUrl": [
-        "https://images.pexels.com/photos/214114/pexels-photo-214114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/214114/pexels-photo-214114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       ],
       "stock": 6,
       "descripcion": "El Boston Terrier es amigable y fácil de entrenar."
@@ -204,8 +200,6 @@ export const PETS_ALL = [
       "breed": "Dogo Argentino",
       "price": 900000,
       "imageUrl": [
-        "https://images.pexels.com/photos/5480678/pexels-photo-5480678.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/5480678/pexels-photo-5480678.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       ],
       "stock": 3,
       "descripcion": "El Dogo Argentino es fuerte y protector, ideal para grandes espacios."
@@ -226,8 +220,6 @@ export const PETS_ALL = [
       "breed": "Pomerania",
       "price": 420000,
       "imageUrl": [
-        "https://images.pexels.com/photos/1490903/pexels-photo-1490903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/1490903/pexels-photo-1490903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       ],
       "stock": 7,
       "descripcion": "El Pomerania es esponjoso, pequeño y lleno de energía."
@@ -305,8 +297,6 @@ export const PETS_ALL = [
         "breed": "Pug",
         "price": 380000,
         "imageUrl": [
-          "https://images.pexels.com/photos/1641865/pexels-photo-1641865.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "https://images.pexels.com/photos/1641865/pexels-photo-1641865.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         ],
         "stock": 6,
         "descripcion": "El Pug es cariñoso, tranquilo y lleno de carisma."
@@ -340,8 +330,6 @@ export const PETS_ALL = [
         "breed": "Bulldog Inglés",
         "price": 650000,
         "imageUrl": [
-          "https://images.pexels.com/photos/675993/pexels-photo-675993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "https://images.pexels.com/photos/675993/pexels-photo-675993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         ],
         "stock": 3,
         "descripcion": "El Bulldog Inglés es tranquilo, leal y muy protector."
@@ -352,8 +340,6 @@ export const PETS_ALL = [
         "breed": "Rottweiler",
         "price": 750000,
         "imageUrl": [
-          "https://images.pexels.com/photos/6271985/pexels-photo-6271985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "https://images.pexels.com/photos/6271985/pexels-photo-6271985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         ],
         "stock": 4,
         "descripcion": "El Rottweiler es fuerte, protector y tiene un gran instinto de guardia."
@@ -364,8 +350,6 @@ export const PETS_ALL = [
         "breed": "Boxer",
         "price": 550000,
         "imageUrl": [
-          "https://images.pexels.com/photos/2021960/pexels-photo-2021960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "https://images.pexels.com/photos/2021960/pexels-photo-2021960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         ],
         "stock": 5,
         "descripcion": "El Boxer es enérgico, leal y muy buen compañero para la familia."
@@ -387,8 +371,6 @@ export const PETS_ALL = [
         "breed": "Cocker Spaniel",
         "price": 460000,
         "imageUrl": [
-          "https://images.pexels.com/photos/1677264/pexels-photo-1677264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "https://images.pexels.com/photos/1677264/pexels-photo-1677264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         ],
         "stock": 7,
         "descripcion": "El Cocker Spaniel es amigable, inteligente y de buen temperamento."
