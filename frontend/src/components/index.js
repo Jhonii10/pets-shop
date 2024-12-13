@@ -25,3 +25,7 @@ export * from './home/Testimonials'
 //pet
 export * from './pets/slides-show/PetSlidesShow';
 export * from './pets/quantity-selector/QuantitySelector';
+
+// cart 
+export * from './cart/PetsInCart';
+export * from './cart/OrderSummary';
