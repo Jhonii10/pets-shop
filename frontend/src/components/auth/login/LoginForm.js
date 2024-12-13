@@ -47,7 +47,7 @@ export const LoginForm = () => {
 
           if (result === 'Success') {
               
-              router.replace('/dashboard')
+              router.replace('/')
               toast.success('Inicio de sesion exitoso!');
               reset()
               setCaptchaValue(null)
@@ -167,11 +167,11 @@ export const LoginForm = () => {
         </div>
 
         <div className='flex justify-center items-center gap-2 border border-black rounded-lg mx-16 p-2 mb-2'>
-            <button className='btn btn-danger btn-block' >
+            <button  >
                 <FcGoogle size={30} className='bg-white rounded-full'/>
             </button>
 
-            <button className='btn btn-danger btn-block' >
+            <button  >
                 <BsFacebook color='#0866FF' size={30} className='bg-white rounded-full'/>
             </button>
 
