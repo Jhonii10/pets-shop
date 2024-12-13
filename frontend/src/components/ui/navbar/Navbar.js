@@ -55,9 +55,12 @@ export const Navbar = () => {
                 <div className='cursor-pointer'>
                     <IoSearchOutline className='w-5 h-5' />
                 </div>
-                <div className='cursor-pointer'> 
+                
+                <Link href={'/cart'}>
+                <div className='cursor-pointer relative'> 
                     <IoCartOutline className='w-5 h-5'/>
                 </div>
+                </Link>
     
                 <button 
                     className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'
