@@ -16,11 +16,18 @@ export const authConfig = {
     authorized({ auth, request: { nextUrl } }) {
         
         const isLoggedIn = !!auth?.user;
-        const isOnCheckout = ['/dashboard',].some(route => nextUrl.pathname.startsWith(route));
+        const isOnCheckout = ['/checkout',].some(route => nextUrl.pathname.startsWith(route));
+        const isDashboard = ['/dashboard',].some(route => nextUrl.pathname.startsWith(route));
+        const isAdmin = auth?.user?.name === 'jhoni';
 
         if (isOnCheckout) {
           if (isLoggedIn) return true;
-          return Response.redirect(new URL('/', nextUrl));; 
+          return false; 
+        }
+
+        if (isDashboard) {
+          if (isLoggedIn && isAdmin) return true;
+          return Response.redirect(new URL('/', nextUrl)); 
         }
 
         return true;

@@ -58,14 +58,14 @@ export const LoginForm = () => {
                 recaptchaRef.current.reset();
               }
 
-          }else{
-            setLoginError('Correo y/o contraseña inválidos.');
-            return;
           }
-
+          else if (result === 'CredentialsSignin') {
+            setLoginError('Correo y/o contraseña inválidos.');
+          }
           
         } catch (error) {
           console.error(error)
+          toast.error('Ocurrió un error al iniciar sesión');
         }
     }
 
