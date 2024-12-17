@@ -1,6 +1,12 @@
+import { auth } from "@/auth.config";
 import { Title } from "@/components";
 
-export default function OrdersPage() {
+export default async function OrdersPage() {
+
+  const session = await auth();
+
+    if(!(session?.user)) return redirect('/auth/login');
+
   return (
     <div className='px-0 sm:px-4 '>
       <Title 
