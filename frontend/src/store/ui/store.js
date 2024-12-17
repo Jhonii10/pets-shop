@@ -6,4 +6,8 @@ export const useUiStore = create((set) => ({
     openSideMenu : () => set((state)=> ({isSideMenuOpen: true})),
     closeSideMenu : () => set((state)=> ({isSideMenuOpen: false})),
 
+    isSearchOpen: false,
+    openSearch: () => set((state) => ({ isSearchOpen: true })),
+    closeSearch: () => set((state) => ({ isSearchOpen: false })),
+
 }))

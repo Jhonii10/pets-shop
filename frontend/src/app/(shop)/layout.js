@@ -1,5 +1,5 @@
 import { auth } from "@/auth.config";
-import {  Footer, Navbar, Sidebar } from "@/components";
+import {  Footer, Navbar, Search, Sidebar } from "@/components";
 
 
 export default async function  ShopLayout({children}) {
@@ -10,6 +10,7 @@ export default async function  ShopLayout({children}) {
     <main className="min-h-screen ">
       <Navbar/>
       <Sidebar session={session}/>
+      <Search/>
       <div className="bg-[url('/images/fondo.png')]">
       {children}
       </div>
