@@ -6,6 +6,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
 import { IoCloseOutline, IoLogInOutline, IoLogOutOutline, IoPersonOutline, IoShirtOutline, IoTicketOutline } from 'react-icons/io5'
+import { MdDashboard } from 'react-icons/md'
 
 export const Sidebar =  ({session}) => {
 
@@ -74,6 +75,7 @@ export const Sidebar =  ({session}) => {
                             <Link 
                                 href={'/profile'}
                                 className='flex items-center mt-5 p-2 hover:bg-gray-100 rounded-md transition-all'
+                                onClick={closeSideMenu}
                             >
                                 <IoPersonOutline size={20}/>
                                 <span className='ml-3 text-md font-medium'>Perfil</span>
@@ -83,6 +85,7 @@ export const Sidebar =  ({session}) => {
                             <Link 
                                 href={'/orders'}
                                 className='flex items-center mt-5 p-2 hover:bg-gray-100 rounded-md transition-all'
+                                onClick={closeSideMenu}
                             >
                                 <IoTicketOutline size={20}/>
                                 <span className='ml-3 text-md font-medium'>Ordenes</span>
@@ -137,8 +140,8 @@ export const Sidebar =  ({session}) => {
                     className='flex items-center mt-5 p-2 hover:bg-gray-100 rounded-md transition-all'
                     onClick={closeSideMenu}
                 >
-                    <IoShirtOutline size={20}/>
-                    <span className='ml-3 text-md font-medium'>Dashboard</span>
+                    <MdDashboard size={20}/>
+                    <span className='ml-3 text-md font-medium'>Panel administrativo</span>
                 </Link>
                 </>
                 )
