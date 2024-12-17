@@ -33,7 +33,7 @@ export const PetCard = ({pet}) => {
         </div>
         </Link>
         <div className='flex flex-col p-4'>
-            <Link href={`#`} className='hover:font-medium'>
+            <Link href={`/pets/${pet?.id}`} className='hover:font-medium'>
                 {pet.breed}
             </Link>
             <span className='font-bold'>{fCurrency(pet.price)}</span>

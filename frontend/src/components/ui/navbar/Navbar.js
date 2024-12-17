@@ -9,6 +9,7 @@ import { IoCartOutline, IoSearchOutline } from 'react-icons/io5'
 export const Navbar = () => {
 
     const openSideMenu = useUiStore((state)=>state.openSideMenu)
+    const openSearch = useUiStore((state) => state.openSearch)
 
     return (
         <nav className='flex px-4 py-4 justify-between items-center w-full bg-[#4DD7F5]'>
@@ -53,7 +54,15 @@ export const Navbar = () => {
     
             <div className='flex items-center gap-4'>
                 <div className='cursor-pointer'>
+                <button
+                className='relative flex flex-row items-center justify-center w-12 h-12 text-black transition-colors duration-[350ms] ease-0'
+                onClick={openSearch}
+                aria-label="Buscar"
+                role="button"
+                tabIndex={0}
+                >
                     <IoSearchOutline className='w-5 h-5' />
+                </button>
                 </div>
                 
                 <Link href={'/cart'}>

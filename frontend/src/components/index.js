@@ -4,6 +4,7 @@ export * from './ui/sidebar/Sidebar'
 export * from './ui/footer/Footer'
 export * from './ui/title/Title'
 export * from './ui/pagination/Pagination'
+export * from './ui/search/Search'
 
 // auth 
 export * from './auth/login/LoginForm';
