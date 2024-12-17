@@ -4,7 +4,9 @@ import { logOut } from '@/lib/auth/actions'
 import { useUiStore } from '@/store'
 import clsx from 'clsx'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import React, { useEffect } from 'react'
+import toast from 'react-hot-toast'
 import { IoCloseOutline, IoLogInOutline, IoLogOutOutline, IoPersonOutline, IoShirtOutline, IoTicketOutline } from 'react-icons/io5'
 import { MdDashboard } from 'react-icons/md'
 
@@ -103,6 +105,8 @@ export const Sidebar =  ({session}) => {
                         onClick={()=>{
                             logOut();
                             closeSideMenu();
+                            toast.success('session finalizada')
+                            redirect('/')
                         }}
                         
                     >
