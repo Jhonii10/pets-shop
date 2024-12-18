@@ -16,7 +16,7 @@ export const Sidebar =  ({session}) => {
   const closeSideMenu = useUiStore((state)=>state.closeSideMenu);
   
   const isAuthenticated = !!session?.user;
-  const isAdmin = session?.user?.name === 'jhoni'; 
+  const isAdmin = session?.user?.name === 'jhoni' || session?.user?.name === 'valeria garcia' || session?.user?.name === 'nicole garcia'; 
 
   useEffect(() => {
     if (isSideMenuOpen) {

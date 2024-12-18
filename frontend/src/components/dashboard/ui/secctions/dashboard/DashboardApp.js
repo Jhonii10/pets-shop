@@ -42,7 +42,7 @@ export const DashboardApp = ({session}) => {
                 <AppStatistics
                   title={'Total de mascotas'}
                   porcentaje={'+0.2 %'}
-                  valores={'100'}
+                  valores={'36'}
                   charDate={[5,18,12,51,68,11,39,37]}
                   colorColumn={'#00B8D9'}
                 />
