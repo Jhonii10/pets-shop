@@ -18,7 +18,7 @@ export const authConfig = {
         const isLoggedIn = !!auth?.user;
         const isOnCheckout = ['/checkout',].some(route => nextUrl.pathname.startsWith(route));
         const isDashboard = ['/dashboard',].some(route => nextUrl.pathname.startsWith(route));
-        const isAdmin = auth?.user?.name === 'jhoni';
+        const isAdmin = auth?.user?.name === 'jhoni' || auth?.user?.name === 'valeria garcia' || auth?.user?.name === 'nicole garcia';
 
         if (isOnCheckout) {
           if (isLoggedIn) return true;
